@@ -22,10 +22,6 @@ class LocalDataRepositoryImpl @Inject constructor(
 ): LocalDataRepository {
 
 
-//    override fun getAllMusic(): Single<List<DomainMusic>> {
-//        return musicDAO.getAllMusic()
-//    }
-//
 
 
     override fun getRockMusic(): Single<List<DomainMusic>> {
@@ -36,6 +32,7 @@ class LocalDataRepositoryImpl @Inject constructor(
     }
     override fun getPopMusic(): Single<List<DomainMusic>> {
         return musicDAO.getAllMusic()
+        //pass primary key to differate each call instead of getAllmusic(
     }
 
     override fun insertMusic(music: List<DomainMusic>): Completable {

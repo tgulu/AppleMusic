@@ -4,16 +4,16 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.applemusic.AppleApp
-import com.example.applemusic.R
+
 import com.example.applemusic.adapter.MusicAdapter
-import com.example.applemusic.databinding.FragmentClassicBinding
-import com.example.applemusic.databinding.FragmentPopBinding
+
 import com.example.applemusic.databinding.FragmentRockBinding
 import com.example.applemusic.domain.DomainMusic
-import com.example.applemusic.presenter.PopPresenterContract
+
 
 import com.example.applemusic.presenter.RockPresenterContract
 import com.example.applemusic.presenter.RockViewContract
@@ -74,7 +74,7 @@ class RockFragment : Fragment(), RockViewContract  {
     }
 
     override fun error(error: Throwable) {
-
+        Toast.makeText(context, "Rock Error  -> $error", Toast.LENGTH_SHORT).show()
     }
 
     override fun onDestroy() {

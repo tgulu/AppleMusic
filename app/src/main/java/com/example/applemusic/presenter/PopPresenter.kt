@@ -85,13 +85,6 @@ class PopPresenter @Inject constructor(
 
 }
 
-//interface MusicPresenterContract {
-//    fun init(viewConstants: MusicViewContract)
-//    fun registerToNetwork()
-//    fun getAllSongs()
-//    fun destroyPresenter()
-//
-//}
 
 interface PopPresenterContract{
     fun init(viewContract: PopViewContract)
@@ -105,10 +98,3 @@ interface PopViewContract{
     fun successSongsResponse(songs: MutableList<DomainMusic>, isOffline: Boolean = false)
     fun error(error: Throwable)
 }
-
-//interface MusicViewContract{
-//    fun loadingSongs(isLoading: Boolean = false)
-//    fun successSongsResponse(songs: List<DomainMusic>, isOffline: Boolean = false)
-//    fun error(error: Throwable)
-//}
-

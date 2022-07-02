@@ -4,12 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.applemusic.AppleApp
-import com.example.applemusic.R
 import com.example.applemusic.adapter.MusicAdapter
-import com.example.applemusic.databinding.FragmentClassicBinding
 import com.example.applemusic.databinding.FragmentPopBinding
 import com.example.applemusic.domain.DomainMusic
 import com.example.applemusic.presenter.PopPresenterContract
@@ -77,7 +76,7 @@ class PopFragment : Fragment(), PopViewContract {
 
 
     override fun error(error: Throwable) {
-       // TODO("Not yet implemented")
+        Toast.makeText(context, "Pop Error -> $error", Toast.LENGTH_SHORT).show()
     }
 
     override fun onDestroy() {

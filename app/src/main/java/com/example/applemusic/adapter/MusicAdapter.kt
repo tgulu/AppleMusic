@@ -5,7 +5,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.applemusic.R
-import com.example.applemusic.databinding.ItemViewBinding
 import com.example.applemusic.domain.DomainMusic
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_view.view.*
@@ -20,7 +19,11 @@ class MusicAdapter (
     fun onSetMusic( musicSetter : MutableList<DomainMusic>){
         musicList.addAll(musicSetter)
         notifyDataSetChanged()
+
     }
+    class MusicViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
+
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MusicViewHolder {
         return MusicViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_view,parent,false))
     }
@@ -42,27 +45,6 @@ class MusicAdapter (
 
 
 
-    class MusicViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+
 
     }
-
-
-
-
-
-
-
-
-
-//        itemView.setOnClickListener {
-//            onSongClicked.onMusicClicked(music)
-
-        }
-
-
-
-
-
-interface MusicClickListener{
-    fun onMusicClicked(music: DomainMusic)
-}

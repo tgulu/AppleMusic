@@ -23,15 +23,15 @@ class MusicRepositoryImpl @Inject constructor(
 //    }
 
     override fun getRockMusic(): Single<MusicResponse> {
-        return serviceApi.getSongs("rock")
+        return serviceApi.getAllRockSongs("rock")
 
     }
 
     override fun getClassicMusic(): Single<MusicResponse> {
-        return serviceApi.getSongs("classic")
+        return serviceApi.getAllClassicSongs("classic")
     }
 
     override fun getPopMusic(): Single<MusicResponse> {
-        return serviceApi.getSongs("pop")
+        return serviceApi.getAllPopSongs("pop")
     }
 }

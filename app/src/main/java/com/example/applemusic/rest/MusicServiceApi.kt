@@ -7,8 +7,32 @@ import retrofit2.http.Query
 
 interface MusicServiceApi {
 
-    @GET(SONG_PATH)
-    fun getSongs(
+//    @GET(SONG_PATH)
+//    fun getSongs(
+//        @Query("term") musicType: String,
+//        @Query("amp;media") media: String = "music",
+//        @Query("amp;entity") entity: String = "song",
+//        @Query("amp;limit") limit: Int = 50
+//    ): Single<MusicResponse>
+
+    @GET(ROCK_PATH)
+    fun getAllRockSongs(
+        @Query("term") musicType: String,
+        @Query("amp;media") media: String = "music",
+        @Query("amp;entity") entity: String = "song",
+        @Query("amp;limit") limit: Int = 50
+    ): Single<MusicResponse>
+
+    @GET(CLASSIC_PATH)
+    fun getAllClassicSongs(
+        @Query("term") musicType: String,
+        @Query("amp;media") media: String = "music",
+        @Query("amp;entity") entity: String = "song",
+        @Query("amp;limit") limit: Int = 50
+    ): Single<MusicResponse>
+
+    @GET(POP_PATH)
+    fun getAllPopSongs(
         @Query("term") musicType: String,
         @Query("amp;media") media: String = "music",
         @Query("amp;entity") entity: String = "song",
@@ -18,7 +42,10 @@ interface MusicServiceApi {
     companion object {
 
         const val BASE_URL = "https://itunes.apple.com/"
-        const val SONG_PATH = "search"
+        //private const val SONG_PATH = "search"
+        private const val ROCK_PATH = "search?term=rock&amp;media=music&amp;entity=song&amp;limit=50"
+        private const val CLASSIC_PATH = "search?term=classick&amp;media=music&amp;entity=song&amp;limit=50"
+        private const val POP_PATH = "search?term=pop&amp;media=music&amp;entity=song&amp;limit=50"
 
     }
 }

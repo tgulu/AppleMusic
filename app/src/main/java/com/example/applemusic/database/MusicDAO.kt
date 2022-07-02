@@ -15,6 +15,7 @@ interface MusicDAO {
     @Query("SELECT * FROM music_database")
     fun getAllMusic(): Single<List<DomainMusic>>
 
+
     @Insert(onConflict =  OnConflictStrategy.REPLACE)
     fun insertAllSongs(vararg songs:DomainMusic): Completable
 
