@@ -22,5 +22,7 @@ interface MusicDAO {
     @Query("SELECT * FROM music_database WHERE id LIKE :artistId")
     fun getSongById(artistId:Int):Single <DomainMusic>
 
+    @Query("SELECT * FROM music_database WHERE genre LIKE '%'||:genre||'%'")
+    fun getMusicByGenre(genre: String): Single<List<DomainMusic>>
 
 }

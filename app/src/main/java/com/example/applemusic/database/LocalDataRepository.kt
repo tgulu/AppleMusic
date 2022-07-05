@@ -7,11 +7,11 @@ import javax.inject.Inject
 
 
 interface LocalDataRepository{
-    fun getRockMusic(): Single<List<DomainMusic>>
-    fun getClassicMusic(): Single<List<DomainMusic>>
-    fun getPopMusic(): Single<List<DomainMusic>>
+    fun getRockMusic(genre: String): Single<List<DomainMusic>>
+    fun getClassicMusic(genre: String): Single<List<DomainMusic>>
+    fun getPopMusic(genre: String): Single<List<DomainMusic>>
+   // fun getMusicByGenre(genre: String): Single<List<DomainMusic>>
     //fun getAllMusic(): Single<List<DomainMusic>>
-
     fun insertMusic(music: List<DomainMusic>): Completable
     fun getMusicID(musicID: Int): Single<DomainMusic>
 }
@@ -23,16 +23,16 @@ class LocalDataRepositoryImpl @Inject constructor(
 
 
 
+    override fun getRockMusic(genre: String): Single<List<DomainMusic>> {
+        return musicDAO.getMusicByGenre("rock")
+    }
+    override fun getClassicMusic(genre: String): Single<List<DomainMusic>> {
+        return musicDAO.getMusicByGenre("classick")
+    }
 
-    override fun getRockMusic(): Single<List<DomainMusic>> {
-        return musicDAO.getAllMusic()
-    }
-    override fun getClassicMusic(): Single<List<DomainMusic>> {
-        return musicDAO.getAllMusic()
-    }
-    override fun getPopMusic(): Single<List<DomainMusic>> {
-        return musicDAO.getAllMusic()
-        //pass primary key to differate each call instead of getAllmusic(
+    override fun getPopMusic(genre: String): Single<List<DomainMusic>> {
+        return musicDAO.getMusicByGenre("pop")
+
     }
 
     override fun insertMusic(music: List<DomainMusic>): Completable {
@@ -44,3 +44,4 @@ class LocalDataRepositoryImpl @Inject constructor(
     }
 
 }
+

@@ -35,6 +35,7 @@ class ClassicFragment : Fragment(), ClassicViewContract {
 
     }
 
+
     private fun initRecyclerView(){
         binding.classicRecycler.apply {
             this.layoutManager = LinearLayoutManager (requireContext(),LinearLayoutManager.VERTICAL,false)

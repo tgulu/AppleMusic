@@ -2,9 +2,6 @@ package com.example.applemusic
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentPagerAdapter
 import com.example.applemusic.adapter.TabAdapter
 import com.example.applemusic.view.ClassicFragment
 import com.example.applemusic.view.PopFragment
@@ -38,6 +35,8 @@ class MainActivity : AppCompatActivity() {
         tabs.getTabAt(2)!!.setIcon(R.drawable.ic_headset_foreground)
         tabs.getTabAt(2)!!.text = "Pop"
     }
+
+
 
 }
 

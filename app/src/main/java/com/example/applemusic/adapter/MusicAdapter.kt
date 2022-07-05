@@ -13,11 +13,11 @@ class MusicAdapter (
 
 
 ): RecyclerView.Adapter<MusicAdapter.MusicViewHolder> (){
-//    private val onMusicPicked: MusicClickListener,
     private val musicList: MutableList<DomainMusic> = mutableListOf()
 
     fun onSetMusic( musicSetter : MutableList<DomainMusic>){
         musicList.addAll(musicSetter)
+
         notifyDataSetChanged()
 
     }
@@ -31,8 +31,8 @@ class MusicAdapter (
 
     override fun onBindViewHolder(holder: MusicViewHolder, position: Int) {
         val musical = musicList [position]
-        holder.itemView.Artist.text = musical.artistsName ?: "N/A"
-        holder.itemView.Song.text = musical.collectionName ?: "N/A"
+        holder.itemView.Artist.text = musical.artistsName
+        holder.itemView.Song.text = musical.collectionName
         holder.itemView.Price.text = "$ ${musical.trackPrice.toString()} USD"
         Picasso.get()
             .load(musical.artWorkUrl60)

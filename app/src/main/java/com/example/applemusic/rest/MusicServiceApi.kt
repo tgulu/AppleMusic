@@ -7,13 +7,6 @@ import retrofit2.http.Query
 
 interface MusicServiceApi {
 
-//    @GET(SONG_PATH)
-//    fun getSongs(
-//        @Query("term") musicType: String,
-//        @Query("amp;media") media: String = "music",
-//        @Query("amp;entity") entity: String = "song",
-//        @Query("amp;limit") limit: Int = 50
-//    ): Single<MusicResponse>
 
     @GET(ROCK_PATH)
     fun getAllRockSongs(

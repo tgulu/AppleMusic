@@ -28,12 +28,3 @@ abstract class PresenterModule {
 
 }
 
-//    @Binds
-//    abstract fun allPresenter(
-//        classicPresenter: ClassicPresenter,
-//        rockPresenter: RockPresenter,
-//        popPresenter: PopPresenter,
-//
-//
-//
-//        ): PopPresenterContract

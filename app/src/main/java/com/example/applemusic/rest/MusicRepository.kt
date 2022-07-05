@@ -16,11 +16,6 @@ class MusicRepositoryImpl @Inject constructor(
     private val serviceApi: MusicServiceApi
 ) : MusicRepository {
 
-//    override fun getRockMusic(): Single<MusicResponse> {
-//        "mydate".convertDate()
-//        return serviceApi.getSongs("rock")
-//
-//    }
 
     override fun getRockMusic(): Single<MusicResponse> {
         return serviceApi.getAllRockSongs("rock")

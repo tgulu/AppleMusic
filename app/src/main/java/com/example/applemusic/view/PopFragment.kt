@@ -67,7 +67,6 @@ class PopFragment : Fragment(), PopViewContract {
 
 
     override fun loadingSongs(isLoading: Boolean) {
-        //TODO("Not yet implemented")
     }
 
     override fun successSongsResponse(songs: MutableList<DomainMusic>, isOffline: Boolean) {

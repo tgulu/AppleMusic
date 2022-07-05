@@ -33,24 +33,17 @@ class PopPresenter @Inject constructor(
        // TODO("Not yet implemented")
     }
 
-//    override fun getAllSongs() {
-//        TODO("Not yet implemented")
-//    }
+
 
     override fun getAllSongs() {
         popContract?.loadingSongs(true)
         getMusicFromNetwork()
     }
 
-//    override fun getPopMusic() {
-//        popContract?.loadingSongs(true)
-//        getMusicFromNetwork()
-//    }
-
 
 
     private fun getSongFromDb(){
-        musicRepo.getPopMusic()
+        musicRepo.getPopMusic("pop")
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(
@@ -64,7 +57,7 @@ class PopPresenter @Inject constructor(
         musicRepository.getPopMusic()
             .subscribeOn(Schedulers.io())
             .flatMapCompletable {
-                musicRepo.insertMusic(it.music.mapToDomainSong())
+                musicRepo.insertMusic(it.music.mapToDomainSong("pop"))
             }
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(

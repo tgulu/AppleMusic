@@ -2,7 +2,7 @@ package com.example.applemusic.database
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import androidx.room.TypeConverters
+
 import com.example.applemusic.domain.DomainMusic
 
 
@@ -13,10 +13,6 @@ import com.example.applemusic.domain.DomainMusic
 
 )
 
-//@TypeConverters(
-//    CardPricesConverter::class,
-//    CardsImagesConverter::class
-//)
 
 
 abstract class MusicDatabase : RoomDatabase() {

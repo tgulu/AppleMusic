@@ -10,13 +10,11 @@ class AppleApp: Application() {
     override fun onCreate() {
         super.onCreate()
         component = DaggerMusicComponent.builder()
-            //DaggerApp.daggerComponenet.inject(this)
             .applicationModule(ApplicationModule(this))
             .build()
     }
 
     companion object{
-        //CardComponent has access to all the inject objects
         lateinit var component: MusicComponent
     }
 }

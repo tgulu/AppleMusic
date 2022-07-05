@@ -23,7 +23,6 @@ class ClassicPresenter  @Inject constructor(
     }
 
     override fun registerToNetwork() {
-//        TODO("Not yet implemented")
     }
 
     override fun getAllSongs() {
@@ -36,7 +35,7 @@ class ClassicPresenter  @Inject constructor(
 
 
     private fun getSongFromDb(){
-        musicRepo.getClassicMusic()
+        musicRepo.getClassicMusic("classick")
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(
@@ -51,7 +50,7 @@ class ClassicPresenter  @Inject constructor(
         musicRepository.getClassicMusic()
             .subscribeOn(Schedulers.io())
             .flatMapCompletable {
-                musicRepo.insertMusic(it.music.mapToDomainSong())
+                musicRepo.insertMusic(it.music.mapToDomainSong("classick"))
             }
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(
@@ -72,14 +71,6 @@ class ClassicPresenter  @Inject constructor(
 
 }
 
-//interface MusicPresenterContract {
-//    fun init(viewConstants: MusicViewContract)
-//    fun registerToNetwork()
-//    fun getAllSongs()
-//    fun destroyPresenter()
-//
-//}
-//
 interface ClassicPresenterContract{
     fun init(viewContract: ClassicViewContract)
     fun registerToNetwork()

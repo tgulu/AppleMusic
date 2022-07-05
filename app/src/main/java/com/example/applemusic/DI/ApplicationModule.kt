@@ -25,7 +25,7 @@ class ApplicationModule(private val application: Application) {
             MusicDatabase::class.java,
             "music-db"
         )
-            //.addMigrations(MIGRATION_1_2)
+
             .build()
 
     @Provides

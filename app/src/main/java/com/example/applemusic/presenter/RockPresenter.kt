@@ -35,7 +35,7 @@ class RockPresenter @Inject constructor(
 
 
     private fun getSongFromDb(){
-        musicRepo.getRockMusic()
+        musicRepo.getRockMusic("rock")
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(
@@ -49,7 +49,7 @@ class RockPresenter @Inject constructor(
         musicRepository.getRockMusic()
             .subscribeOn(Schedulers.io())
             .flatMapCompletable {
-                musicRepo.insertMusic(it.music.mapToDomainSong())
+                musicRepo.insertMusic(it.music.mapToDomainSong("rock"))
             }
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(
