@@ -24,9 +24,12 @@ class MusicAdapter (
     class MusicViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MusicViewHolder {
-        return MusicViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_view,parent,false))
-    }
+
+
+
+
+
+    override fun getItemCount(): Int = musicList.size
 
 
     override fun onBindViewHolder(holder: MusicViewHolder, position: Int) {
@@ -41,10 +44,8 @@ class MusicAdapter (
             .into(holder.itemView.Image)
     }
 
-    override fun getItemCount(): Int = musicList.size
-
-
-
-
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MusicViewHolder {
+        return MusicViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_view,parent,false))
+    }
 
     }
