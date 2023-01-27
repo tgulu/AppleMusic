@@ -1,7 +1,5 @@
 # AppleMusic
-Apple Music App Api
-
-The Apple Music API application displays a wide variety of songs from various genres.
+The Apple Music App utilizes the Apple Music Api to display a wide variety of songs from various genres.
 One of the key features of the app is its custom-made user interface, which is designed to make it easy for users to browse and find the music that falls into the various music genres 
 
 The app utilizes OkHttp, which is a library for handling HTTP networking. This allows the app to make requests to the server and receive responses, which is essential for accessing the music content.
