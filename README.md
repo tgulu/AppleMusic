@@ -1,4 +1,4 @@
-# AppleMusic
+# Apple Music Display
 The Apple Music App utilizes the Apple Music Api to display a wide variety of songs from various genres.
 One of the key features of the app is its custom-made user interface, which is designed to make it easy for users to browse and find the music that falls into the various music genres 
 
